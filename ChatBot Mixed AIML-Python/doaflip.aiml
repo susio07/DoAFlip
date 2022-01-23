@@ -23,21 +23,7 @@
         </template>
     </category>
     
-    <category>
-        <pattern>UN * SE HACE *</pattern>
-        <template>
-            <think>
-                <learn>
-                    <category>
-                        <pattern>
-                            Como hago un <eval><star index="1"/></eval>
-                        </pattern>
-                        <template><eval><star index="2"/></eval></template>
-                    </category>
-                </learn>
-            </think>
-        </template>
-    </category>
+
     
     <category>
         <pattern>HOLA</pattern>
