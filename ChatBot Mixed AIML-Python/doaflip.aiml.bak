@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>HEY</pattern>
+    <template>
+            <random>
+      	   	<li>Que hay bro, Vamos a patinar?</li>
+      	   	<li>Como estas hoy? Vamos a patinar</li>
+      	   	<li>Hoy hace un buen dia para ir a patinar</li>
+      	   </random>
+       </template>
+    </category>
+    
+<category>
+        <pattern>Como hago un </pattern>
+        <template><map name="tricks">tricks</map></template>
+    </category>
+    
+    <category>
+        <pattern>Como hago un *</pattern>
+        <template>Vaya no se cual es ese truco.
+            Para enñarme como se hace un <star/>, escribe: Un NOMBRETRUCO  se hace EXPLICACIÓN
+        </template>
+    </category>
+    
+    <category>
+        <pattern>UN * SE HACE *</pattern>
+        <template>
+            <think>
+                <learn>
+                    <category>
+                        <pattern>
+                            Como hago un <eval><star index="1"/></eval>
+                        </pattern>
+                        <template><eval><star index="2"/></eval></template>
+                    </category>
+                </learn>
+            </think>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>HOLA</pattern>
+        <template><srai>HEY</srai></template>
+    </category>
+    
+    <category>
+        <pattern>BRO</pattern>
+        <template><srai>HEY</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HOLAA</pattern>
+        <template><srai>HEY</srai></template>
+    </category>
+    
+    <category>
+        <pattern>BUENAS</pattern>
+        <template><srai>HEY</srai></template>
+    </category>
+    
+    <category>
+        <pattern>SKATEORDIE</pattern>
+        <template><srai>HEY</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HELLOW</pattern>
+        <template><srai>HEY</srai></template>
+    </category>
+  
+    <category>
+    <pattern>HOLA, SOY *</pattern>
+    <template>
+            <random>
+      	   	<li>Que hay <set name="nombre"><star/></set>, Vamos a patinar?</li>
+      	   	<li>Como estas hoy  <set name="nombre"><star/></set>? Vamos a patinar</li>
+      	   	<li>Quieres un autografo o que  <set name="nombre"><star/></set>?</li>
+      	   </random>
+       </template>
+    </category>
+    
+    <category>
+        <pattern>Donde vamos a patinar</pattern>
+        <template><srai>Donde patinamos hoy</srai></template>
+    </category>
+    
+    <category>
+        <pattern>Ayuda</pattern>
+        <template><srai>Me echas un cable</srai></template>
+    </category>
+    
+    <category>
+        <pattern>Help</pattern>
+        <template><srai>Me echas un cable</srai></template>
+    </category>
+    
+    <category>
+        <pattern>cursillo</pattern>
+        <template><srai>Me echas un cable</srai></template>
+    </category>
+    
+    <category>
+        <pattern>Me echas un cable</pattern>
+        <template>Empecemos por lo básico, puedes hacer un Ollie?</template>
+    </category>
+    
+    <category>
+        <pattern>si</pattern>
+        <that>EMPECEMOS POR LO BÁSICO, PUEDES HACER UN OLLIE</that>
+        <template>
+            Estupendo!! Como te ha salido?
+        
+            <button>
+                <text>Planchado</text>
+                <postback>internalplanchadobutton</postback>
+            </button>
+            <button>
+                <text>Mas o menos</text>
+                <postback>internalmasomenosbutton</postback>
+            </button>
+            <button>
+                <text>De pura potra</text>
+                <postback>internaldepurapotrabutton</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>no</pattern>
+        <that>EMPECEMOS POR LO BÁSICO, PUEDES HACER UN OLLIE</that>
+        <template>¿Quieres intentar otro truco?
+            <button>
+                <text>Si</text>
+                <postback>internalsitruco</postback>
+            </button>
+            <button>
+                <text>No</text>
+                <postback>internalnotruco</postback>
+            </button>
+            </template>
+    </category>
+    
+    <category>
+        <pattern>internalsitruco</pattern>
+        <template>
+            <random>
+                <li><map name="tricks">Ollie</map></li>
+                <li><map name="tricks">Pop Shove-it</map></li>
+                <li><map name="tricks">Frontside</map></li>
+                <li><map name="tricks">Backside</map></li>
+                <li><map name="tricks">Varial Flip</map></li>
+            </random>
+            </template>
+    </category>
+    
+    <category>
+        <pattern>internalnotruco</pattern>
+        <template>Pues nada campeon sigue practicando</template>
+    </category>
+    
+    <category>
+        <pattern>siguiente</pattern>
+        <that>EMPECEMOS POR LO BÁSICO, PUEDES HACER UN OLLIE</that>
+        <template>El siguiente paso deberia ser el shove-it, sabes en que consiste?
+        
+            <button>
+                <text>Claro que si</text>
+                <postback>internalclaroquesibutton</postback>
+            </button>
+            <button>
+                <text>Que va bro</text>
+                <postback>internalclaroqueno</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>internalplanchadobutton</pattern>
+        <template>Olee sigue dandole caña</template>
+    </category>
+    
+    <category>
+        <pattern>internalmasomenosbutton</pattern>
+        <template>Venga sigue practicando!</template>
+    </category>
+    
+    <category>
+        <pattern>internaldepurapotrabutton</pattern>
+        <template>Recuerda como se hace un ollie:
+        <map name="tricks">Ollie</map>
+        </template>
+    </category>
+    
+    
+    <category>
+        <pattern>internalclaroquesibutton</pattern>
+        <template>Geniaal!! A darle caña.</template>
+    </category>
+    
+    <category>
+        <pattern>internalclaroqueno</pattern>
+         <template><map name="tricks">Pop Shove It</map></template>
+    </category>
+    
+  
+    
+<category>
+    <pattern>Donde patinamos hoy </pattern>
+    <template>Que te apatece hacer hoy <get name="nombre"></get>?
+        <delay>1</delay>
+        <button>
+            <text>Skatepark</text>
+            <postback>Skatepark</postback>
+        </button>
+        <button>
+            <text>Rampa</text>
+            <postback>Rampa</postback>
+        </button>
+        <button>
+            <text>Barandilla</text>
+            <postback>Barandilla</postback>
+        </button>
+        <button>
+            <text>Escaleras</text>
+            <postback>Escaleras</postback>
+        </button>
+    </template>
+</category>
+
+<category>
+    <pattern>SKATEPARK</pattern>
+    <template> Has estado alguna vez en:
+    <delay>1</delay>
+        <random>
+            <li><link>
+                <text>Plaza de armas</text>
+                <url>https://goo.gl/maps/NtGH2iRoqVuv6CBb7</url>
+            </link></li>
+            <li><link>
+                <text>Camas</text>
+                <url>https://goo.gl/maps/31ghoKDJEDyFpQfT7</url>
+            </link></li>
+            <li><link>
+                <text>Costco</text>
+                <url>https://goo.gl/maps/aPN3ZnKFydpRu6N58</url>
+            </link></li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>RAMPA</pattern>
+    <template>Has estado alguna vez en:
+    <delay>1</delay>
+        <random>
+            <li><link>
+                <text>Setas</text>
+                <url>https://goo.gl/maps/iSeYeRvTrXEQgy228</url>
+            </link></li>
+            <li><link>
+                <text>Nervion</text>
+                <url>https://goo.gl/maps/xUGgMqYGkK8y2ccz8</url>
+            </link></li>
+            <li><link>
+                <text>Cohete</text>
+                <url>https://goo.gl/maps/6YVXNwSLzzbGVCSg7</url>
+            </link></li>
+            <li><link>
+                <text>Plaza Hermanos Cruz Solis</text>
+                <url>https://goo.gl/maps/RAkNscbVTwXF8VTbA</url>
+            </link></li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>BARANDILLA</pattern>
+    <template>Has estado alguna vez en:
+    <delay>1</delay>
+        <random>
+            <li><link>
+                <text>Las 13 de Plaza de armas</text>
+                <url>https://goo.gl/maps/f8VqjRrby1qnope28</url>
+            </link></li>
+            <li><link>
+                <text>Plaza de armas</text>
+                <url>https://goo.gl/maps/NtGH2iRoqVuv6CBb7</url>
+            </link></li>
+            <li><link>
+                <text>Costco</text>
+                <url>https://goo.gl/maps/aPN3ZnKFydpRu6N58</url>
+            </link></li>
+        </random>
+    </template>
+</category>
+
+<category>
+    <pattern>ESCALERAS</pattern>
+    <template>Has estado alguna vez en:
+    <delay>1</delay>
+        <random>
+            <li><link>
+                <text>Las 13 de Plaza de armas</text>
+                <url>https://goo.gl/maps/f8VqjRrby1qnope28</url>
+            </link></li>
+            <li><link>
+                <text>Plaza de armas</text>
+                <url>https://goo.gl/maps/NtGH2iRoqVuv6CBb7</url>
+            </link></li>
+            <li><link>
+                <text>Costco</text>
+                <url>https://goo.gl/maps/aPN3ZnKFydpRu6N58</url>
+            </link></li>
+            <li><link>
+                <text>Plaza Hermanos Cruz Solis</text>
+                <url>https://goo.gl/maps/RAkNscbVTwXF8VTbA</url>
+            </link></li>
+        </random>
+    </template>
+</category>
+</aiml>

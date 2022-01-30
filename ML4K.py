@@ -3,7 +3,7 @@ import requests
 # This function will pass your text to the machine learning model
 # and return the top result with the highest confidence
 def classify(text):
-    key = "698dffc0-7c7e-11ec-aa96-6925fa064154fb6fec4c-040a-4036-b141-e089dea20220"
+    key = "3fb84010-8210-11ec-9666-4f69995563d21ac312b5-4c62-43ac-8a7b-4b142a572f42"
     url = "https://machinelearningforkids.co.uk/api/scratch/"+ key + "/classify"
 
     response = requests.get(url, params={ "data" : text })
@@ -23,17 +23,35 @@ def answer_question():
 
   if confidence < 75:
     print('No lo tengo registrado como algun posible truco')
-  elif answerclass == "trucos":
-    print('Trucos de flat son los que se caen en el suelo')
-  elif answerclass == "trucos_rampa":
-    print('Trucos de los que se necesita una rampa para saltarlos al copi o aprovechar la inercia de la rampa')
-  elif answerclass == "trucos_de_grab":
-    print('Los trucos de grab consisten en algun tipo de agarre de la tabla estando en el aire')
-  elif answerclass == "trucos_old_school":
-    print('Los trucos de old school son los clasicos, donde empezo el skate, cuanto todavia no tenian tail y no se podian hacer trucos de saltar con pop, son muy bonitos visualmente')
+  elif answerclass == "Ollie":
+    print('Ese truco es un Ollie')
+  elif answerclass == "KickFlip":
+    print('Ese truco es un KickFlip')
+  elif answerclass == "HellFlip":
+    print('Ese truco es un HellFlip')
+  elif answerclass == "VarialFlip":
+    print('Ese truco es un VarialFlip')
+  elif answerclass == "Backside":
+    print('Ese truco es un Backside')
+  elif answerclass == "ShoveIt":
+    print('Ese truco es un ShoveIt')
+  elif answerclass == "Frontside":
+    print('Ese truco es un Frontside')
+  elif answerclass == "TreeFlip":
+    print('Ese truco es un TreeFlip')
+  elif answerclass == "VarialHell":
+    print('Ese truco es un VarialHell')
+  elif answerclass == "FrontsideFlip":
+    print('Ese truco es un FrontsideFlip')
+  elif answerclass == "BacksideFlip":
+    print('Ese truco es un BacksideFlip')
+  elif answerclass == "FrontsideHell":
+    print('Ese truco es un FrontsideHell')
+  elif answerclass == "Powerside":
+    print('Ese truco es un Powerside')
 
 
-print('Quieres saber en que consiste cada truco')
+print('Identificar truco')
 
 while True:
   answer_question()

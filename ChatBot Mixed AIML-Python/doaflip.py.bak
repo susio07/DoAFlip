@@ -23,14 +23,14 @@ def classify(text):
 while True:
     if mode == 0:
         input_text = input(">Skater: ")
-        if input_text == "modo truco":
+        if input_text == "modo chat":
             mode = 1
         else:
             response = kernel.respond(input_text)
             print(">Bot: "+response)
     elif mode == 1:
         question = input("> ")
-        if question == "modo chat":
+        if question == "modo truco":
             mode = 0
         else:
             answer = classify(question)
