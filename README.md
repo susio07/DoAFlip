@@ -11,4 +11,5 @@ Machine Learning con ML4K
 
 # Video
 https://youtu.be/iSliHXFtcY8 Video sobre AIML y la identifiacion de trucos obsoleta.
+
 https://youtu.be/QimWuFQkRxE Video sobre Python y la demostración de identicar trucos a traves de explicaciones.
